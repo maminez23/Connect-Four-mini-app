@@ -1,50 +1,29 @@
-const Game = (props) => (
-    <div>
-            <table>
-                <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+import Tableau from "./table.jsx";
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+class Game extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+    render() {
+        var items=[];
+        for(let i = 0; i < this.props.row; i++){
+            items.push(<Tableau col={this.props.col}/>)
+        }
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
-    </div>
+        return(
+            <div>
+                <table>
+                    <tbody>
+                    {items}
+                    </tbody>
+                </table>
+            </div>
+        )
 
-    )
+    }
+}
+
 
 export default Game;
